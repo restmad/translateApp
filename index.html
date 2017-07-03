@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="gbk">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>translateApp</title>
 	<link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
@@ -47,41 +47,41 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-ms-6 col-md-6 col-lg-6">
-				<span class="text-info">·­ÒëÎª£º</span>
+				<span class="text-info">ç¿»è¯‘ä¸ºï¼š</span>
 				<div class="btn-group">
-					<button type="button" class="target-language btn btn-primary dropdown-toggle" data-toggle="dropdown">Ó¢Óï</button>
+					<button type="button" class="target-language btn btn-primary dropdown-toggle" data-toggle="dropdown">è‹±è¯­</button>
 					<ul class="dropdown-menu" role="menu" style="margin: 0;color: ">
-						<li><span data-lang="zh">ÖĞÎÄ</span><span data-lang="en">Ó¢Óï</span></li>
-						<li><span data-lang="jp">ÈÕÓï</span><span data-lang="kor">º«Óï</span></li>
-						<li><span data-lang="fra">·¨Óï</span><span data-lang="spa">Î÷°àÑÀÓï</span></li>
-						<li><span data-lang="th">Ì©Óï</span><span data-lang="ru">¶íÓï</span></li>
-						<li><span data-lang="de">µÂÓï</span><span data-lang="it">Òâ´óÀûÓï</span></li>
+						<li><span data-lang="zh">ä¸­æ–‡</span><span data-lang="en">è‹±è¯­</span></li>
+						<li><span data-lang="jp">æ—¥è¯­</span><span data-lang="kor">éŸ©è¯­</span></li>
+						<li><span data-lang="fra">æ³•è¯­</span><span data-lang="spa">è¥¿ç­ç‰™è¯­</span></li>
+						<li><span data-lang="th">æ³°è¯­</span><span data-lang="ru">ä¿„è¯­</span></li>
+						<li><span data-lang="de">å¾·è¯­</span><span data-lang="it">æ„å¤§åˆ©è¯­</span></li>
 					</ul>
 				</div>
 				
-				<textarea name="" id="" cols="20" rows="10" class="in form-control" placeholder="ÇëÊäÈëÒª·­ÒëµÄÄÚÈİ£º"></textarea>	
+				<textarea name="" id="" cols="20" rows="10" class="in form-control" placeholder="è¯·è¾“å…¥è¦ç¿»è¯‘çš„å†…å®¹ï¼š"></textarea>	
 			</div>
 			<div class="col-ms-6 col-md-6 col-lg-6">
-				<button class="btn btn-success">·­Òë</button>
+				<button class="btn btn-success">ç¿»è¯‘</button>
 				<div class="out"></div>
 			</div>
 		</div>
 	</div>
 </body>
 	<script>
-			var lang = "en";   //Ä¬ÈÏÎªÓ¢Óï
-			 //µÚÒ»²½ Ñ¡ÔñÄ¿±êÓïÑÔ
+			var lang = "en";   //é»˜è®¤ä¸ºè‹±è¯­
+			 //ç¬¬ä¸€æ­¥ é€‰æ‹©ç›®æ ‡è¯­è¨€
 			$("span").on("click",function(e){     
 				$("button.target-language").html(e.target.innerHTML);
 				lang = e.target.dataset.lang;
 			});
 
-			 //µÚ¶ş²½ Éú³Édata
+			 //ç¬¬äºŒæ­¥ ç”Ÿæˆdata
 			 function createData(){
 			 	var q = $("textarea").val();
 			 	var salt = Date.now();
 			 	var str = "20170630000061038" + q + salt + "nfAcgTO_Ub23sQR86MyW";  														
-			 	var sign = md5(str);											//Éú³Ésign
+			 	var sign = md5(str);											//ç”Ÿæˆsign
 			 	var data = "q=" + q +"&from=auto&to=" + lang + "&appid=20170630000061038&salt=" + salt + "&sign=" + sign;
 			 	return data;
 			 } 
@@ -99,7 +99,7 @@
 			 			$("div.out").html(json.trans_result[0].dst);
 			 		},
 			 		error:function(){
-			 			alert("·­Òë³ö´í£¬ÇëÖØÊÔ");
+			 			alert("ç¿»è¯‘å‡ºé”™ï¼Œè¯·é‡è¯•");
 			 		}
 			 	});
 			 });		 
